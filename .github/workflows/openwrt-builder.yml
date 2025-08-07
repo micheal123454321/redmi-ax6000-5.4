@@ -70,16 +70,17 @@ jobs:
       run: |
          cd openwrt
          ./scripts/feeds update -a 
+         ./scripts/feeds install -a
 #        git clone -b master --single-branch https://github.com/immortalwrt/packages.git packages_master
 #         rm -rf ./feeds/packages/lang/golang
 #         mv ./packages_master/lang/golang ./feeds/packages/lang
 #         rm -rf ./packages_master
+          git clone https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
 
 
-
-    - name: Install feeds
-      run: |
-        cd openwrt && ./scripts/feeds install -a
+#    - name: Install feeds
+#      run: |
+#        cd openwrt && ./scripts/feeds install -a
 #        rm -rf feeds/luci/applications/luci-app-passwall/
 #       rm -rf feeds/packages/net/xray-core/
 #       rm -rf feeds/packages/net/xray-plugin/
@@ -89,7 +90,7 @@ jobs:
 #        rm -rf feeds/packages/net/shadowsocksr-libev/
 #        git clone https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 #        git clone https://github.com/xiaorouji/openwrt-passwall-packages package/luci-app-passwall-packages
-        git clone https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
+#       git clone https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
 
 #    - name: Update Golang
 #      run: |
